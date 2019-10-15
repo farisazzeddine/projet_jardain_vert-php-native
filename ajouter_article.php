@@ -17,68 +17,8 @@ $date_ajoute_article=date('Y/m/d H:i:s');
 echo $date_ajoute_article."<br>";
 
 
-/* if($_FILES["image"]["name"]=="") $error["image"]="please insert image";
-$uploads_dir = 'uploads';
-if(empty($error)){
-    $img_name = $_FILES["image"]["name"];
-    $img_size = $_FILES["image"]["size"];
-    $img_tmp= $_FILES["image"]["tmp_name"];
-    $exploded = explode('.',$img_name);
-    $img_ext = end($exploded);
-    $avl = array('jpg','png','jpeg');
-    if($img_size>524288) $error[image]="too large image";
-    else if(!in_array($img_ext,$avl)) $error["image"]="invalid extension";
-    if(empty($error["image"])){
-        
-       $image=(microtime(true)*10000).".".$img_ext;
-       move_uploaded_file($_FILES['image']['tmp_name'],"$uploads_dir/$img_name"); 
-    }
-} */
-
-/* if(!$title) $error["title"]="please insert a valid title";
-else if(strlen($title)>20) $error["title"]="too large title";
-if(!$catego) $error["category"]="please chose a category"; */
 
 
-/* if(isset($_POST["save"])){
-
-$img=time().'_'.$_FILES["image"]["name"]; 
-$tname=$_FILES["image"]["tmp_name"];
-print_r ($img);
-$uploads_dir = 'images/';
-move_uploaded_file($tname, $uploads_dir.'/'.$img);
-} */
- /* if($_FILES["image"]["name"]=="") $error["image"]="please insert image";
-
-if(isset($_FILES['image'])){
-    echo $_FILES['image']['tmp_name'];
-    $img_name = $_FILES["image"]["name"];
-    $img_size = $_FILES["image"]["size"];
-    $img_tmp= $_FILES["image"]["tmp_name"];
-    $exploded = explode('.',$img_name);
-    $img_ext = end($exploded);
-    $avl = array('jpg','png','jpeg');
-    if($img_size>524288) $error[image]="too large image";
-    if(!in_array($img_ext,$avl)) $error["image"]="invalid extension";
-    if(empty($error["image"])){
-        $image=(microtime(true)*10000).".".$img_ext;
-        move_uploaded_file($_FILES['image']['tmp_name'],$uploads_dir);
-    }
-} */
-/* if(isset($_FILES["image"])){
-    $img_name = $_FILES["image"]["name"];
-    $img_size = $_FILES["image"]["size"];
-    $img_tmp= $_FILES["image"]["tmp_name"];
-    $exploded = explode('.',$img_name);
-    $img_ext = end($exploded);
-    $avl = array('jpg','png','jpeg');
-    if($img_size>524288) $error[image]="too large image";
-    if(!in_array($img_ext,$avl)) $error["image"]="invalid extension";
-    if(empty($error["image"])){
-       $image=(microtime(true)*10000).".".$img_ext;
-       move_uploaded_file($_FILES['image']['tmp_name'],$uploads_dir); 
-    }
-} */
 if(empty($error)){
     $sql="INSERT INTO `articles`(`id_article`, `titre`, `contenue`, `image`, `date_ajoute_article`, `id_categories`)
      VALUES (null,'$title','$content','$img_name','$date_ajoute_article','$catego')";
@@ -123,28 +63,7 @@ foreach($error as $e)
 
 
 
-if(isset($_POST['save'])){
 
-$image=$_FILES["image"];
-print_r($image);
-$img_name= $_FILES["image"]["name"];
-$target='images'.basename($img_name);
-$title=$_POST["title"];
-$catego=$_POST["category"];
-$content=$_POST["content"];
-//var_dump($_FILES);
-if( move_uploaded_file($_FILES["image"]["tmp_name"],$target)){
-    $msg= "image uploaded successfuly ";
-} else{
-    $msg="there was problem in uploading image ";
-}
-$sql="INSERT INTO `articles`(`id_article`, `titre`, `contenue`, `image`, `date_ajoute_article`, `id_categories`)
-     VALUES (null,'$title','$content','$img_name','$date_ajoute_article','$catego')";
-     echo $sql;
-     mysqli_query($connection,$sql);
-  
-}
-?>
 
                     <img src="<?php echo 'uploads/'.$row['image'] ;?>" width="50px" height="50px">
                     <?php 

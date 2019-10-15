@@ -225,9 +225,9 @@ session_start();
                 
                 while($row=mysqli_fetch_array($result)){
                             $id_article= $row['id_article'];
-                             $name= $_SESSION['uname'] ;
+                             /* $name= $_SESSION['uname'] ;
                              $id_user = $_SESSION['id_user'];
-                              $prenom= $_SESSION['prenom'];
+                              $prenom= $_SESSION['prenom']; */
                               
                        ?>
                                       <div class="single-blog-post d-flex">
@@ -269,9 +269,9 @@ session_start();
                 while($row=mysqli_fetch_array($result)){
                     print_r($row);
                             $id_article= $row['id_article'];
-                             $name= $_SESSION['uname'] ;
+                             /* $name= $_SESSION['uname'] ;
                              $id_user = $_SESSION['id_user'];
-                              $prenom= $_SESSION['prenom'];
+                              $prenom= $_SESSION['prenom']; */
                               $categorie=$row['nom_categorie'];
                               echo $categorie;
                               
@@ -370,9 +370,9 @@ session_start();
                 
                                                       while($row=mysqli_fetch_array($result)){
                                                                   $id_article= $row['id_article'];
-                                                                   $name= $_SESSION['uname'] ;
+                                                                   /* $name= $_SESSION['uname'] ;
                                                                    $id_user = $_SESSION['id_user'];
-                                                                    $prenom= $_SESSION['prenom'];
+                                                                    $prenom= $_SESSION['prenom']; */
                               
                                                              ?>
                                                            <div class="single-blog-post d-flex">
@@ -405,9 +405,9 @@ session_start();
                 
                                                       while($row=mysqli_fetch_array($result)){
                                                                   $id_article= $row['id_article'];
-                                                                   $name= $_SESSION['uname'] ;
+                                                                 /*   $name= $_SESSION['uname'] ;
                                                                    $id_user = $_SESSION['id_user'];
-                                                                    $prenom= $_SESSION['prenom'];
+                                                                    $prenom= $_SESSION['prenom']; */
                               
                                                              ?>
                                                            <div class="single-blog-post d-flex">
